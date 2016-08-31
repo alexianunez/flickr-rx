@@ -26,14 +26,24 @@ enum FlickrAPIError: ErrorType {
     
 }
 
+enum FlickrAPIMethod: String {
+    
+    case PhotosSearch = "flickr.photos.search"
+    
+}
+
 struct FlickrAPI {
     
     static let sharedInstance = FlickrAPI()
     
+    var method: FlickrAPIMethod = .PhotosSearch
+    
+    private let apiKey = "d0e947f859d1f9d93c5a5c6e40e4670a"
+    
     func getPhotos(searchTerm: String) -> Observable<[Photo]> {
         
         guard !searchTerm.isEmpty,
-            let url = NSURL(string: "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d0e947f859d1f9d93c5a5c6e40e4670a&format=json&tags=\(searchTerm)")
+            let url = NSURL(string: "https://api.flickr.com/services/rest/?method=\(method.rawValue)&api_key=\(apiKey)&format=json&tags=\(searchTerm)")
             else {
                 return Observable.just([])
         }
@@ -58,9 +68,6 @@ struct FlickrAPI {
                         return photos
                 }
                 
-                
-                print(items)
-                
                 for item in items {
                     
                     guard let
@@ -83,7 +90,7 @@ struct FlickrAPI {
         
     }
     
-    func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+    private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
         
         var cleanString = text.stringByReplacingOccurrencesOfString("jsonFlickrApi(", withString: "")
         
