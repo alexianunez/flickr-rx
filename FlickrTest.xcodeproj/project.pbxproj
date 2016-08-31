@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FC494FA41D75141C00A467E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC494FA31D75141C00A467E5 /* AppDelegate.swift */; };
+		FC494FA61D75141C00A467E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC494FA51D75141C00A467E5 /* ViewController.swift */; };
+		FC494FA91D75141C00A467E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC494FA71D75141C00A467E5 /* Main.storyboard */; };
+		FC494FAB1D75141C00A467E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC494FAA1D75141C00A467E5 /* Assets.xcassets */; };
+		FC494FAE1D75141C00A467E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC494FAC1D75141C00A467E5 /* LaunchScreen.storyboard */; };
+		FC494FF41D75144700A467E5 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC494FD51D75143A00A467E5 /* RxCocoa.framework */; };
+		FC494FF51D75144D00A467E5 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC494FCD1D75143A00A467E5 /* RxSwift.framework */; };
+		FC494FF81D751A0F00A467E5 /* FlickrAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC494FF71D751A0F00A467E5 /* FlickrAPI.swift */; };
+		FCDCAF181D76588500DAA203 /* FlickrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDCAF171D76588500DAA203 /* FlickrViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FC494FCC1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8A56AD71AD7424700B4673B;
+			remoteInfo = "RxSwift-iOS";
+		};
+		FC494FCE1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88BB8711B07E5ED0064D411;
+			remoteInfo = "RxSwift-OSX";
+		};
+		FC494FD01D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2EA280C1BB9B5A200880ED3;
+			remoteInfo = "RxSwift-tvOS";
+		};
+		FC494FD21D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F0C0021BBBFB8B001B112F;
+			remoteInfo = "RxSwift-watchOS";
+		};
+		FC494FD41D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C809396D1B8A71760088E94D;
+			remoteInfo = "RxCocoa-iOS";
+		};
+		FC494FD61D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C80939E71B8A71840088E94D;
+			remoteInfo = "RxCocoa-OSX";
+		};
+		FC494FD81D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2138C751BB9BE9800339B5C;
+			remoteInfo = "RxCocoa-tvOS";
+		};
+		FC494FDA1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F0C04B1BBBFBB9001B112F;
+			remoteInfo = "RxCocoa-watchOS";
+		};
+		FC494FDC1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8093BC71B8A71F00088E94D;
+			remoteInfo = "RxBlocking-iOS";
+		};
+		FC494FDE1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8093C451B8A71FC0088E94D;
+			remoteInfo = "RxBlocking-OSX";
+		};
+		FC494FE01D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2EBEB811BB9B99D003A27DC;
+			remoteInfo = "RxBlocking-tvOS";
+		};
+		FC494FE21D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8F0C0581BBBFBCE001B112F;
+			remoteInfo = "RxBlocking-watchOS";
+		};
+		FC494FE41D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA50C1C25C44800CCFEA4;
+			remoteInfo = "RxTests-iOS";
+		};
+		FC494FE61D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA51D1C25C4B500CCFEA4;
+			remoteInfo = "RxTests-OSX";
+		};
+		FC494FE81D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA52E1C25C4C000CCFEA4;
+			remoteInfo = "RxTests-tvOS";
+		};
+		FC494FEA1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C88FA53F1C25C4CC00CCFEA4;
+			remoteInfo = "RxTests-watchOS";
+		};
+		FC494FEC1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83508C31C386F6F0027C24C;
+			remoteInfo = "AllTests-iOS";
+		};
+		FC494FEE1D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83509841C38740E0027C24C;
+			remoteInfo = "AllTests-tvOS";
+		};
+		FC494FF01D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C83509941C38742C0027C24C;
+			remoteInfo = "AllTests-OSX";
+		};
+		FC494FF21D75143A00A467E5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C85BA04B1C3878740075D68E;
+			remoteInfo = PerformanceTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FC494FA01D75141C00A467E5 /* FlickrTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickrTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC494FA31D75141C00A467E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FC494FA51D75141C00A467E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC494FA81D75141C00A467E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FC494FAA1D75141C00A467E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FC494FAD1D75141C00A467E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FC494FAF1D75141C00A467E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC494FB51D75143A00A467E5 /* Rx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Rx.xcodeproj; path = "../../Downloads/RxSwift-rxswift-2.0/Rx.xcodeproj"; sourceTree = "<group>"; };
+		FC494FF71D751A0F00A467E5 /* FlickrAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrAPI.swift; sourceTree = "<group>"; };
+		FCDCAF171D76588500DAA203 /* FlickrViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FC494F9D1D75141B00A467E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC494FF51D75144D00A467E5 /* RxSwift.framework in Frameworks */,
+				FC494FF41D75144700A467E5 /* RxCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FC494F971D75141B00A467E5 = {
+			isa = PBXGroup;
+			children = (
+				FC494FB51D75143A00A467E5 /* Rx.xcodeproj */,
+				FC494FA21D75141C00A467E5 /* FlickrTest */,
+				FC494FA11D75141C00A467E5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FC494FA11D75141C00A467E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC494FA01D75141C00A467E5 /* FlickrTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC494FA21D75141C00A467E5 /* FlickrTest */ = {
+			isa = PBXGroup;
+			children = (
+				FC494FF61D75188E00A467E5 /* API */,
+				FC494FA31D75141C00A467E5 /* AppDelegate.swift */,
+				FC494FA51D75141C00A467E5 /* ViewController.swift */,
+				FC494FA71D75141C00A467E5 /* Main.storyboard */,
+				FC494FAA1D75141C00A467E5 /* Assets.xcassets */,
+				FC494FAC1D75141C00A467E5 /* LaunchScreen.storyboard */,
+				FC494FAF1D75141C00A467E5 /* Info.plist */,
+				FCDCAF171D76588500DAA203 /* FlickrViewModel.swift */,
+			);
+			path = FlickrTest;
+			sourceTree = "<group>";
+		};
+		FC494FB61D75143A00A467E5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC494FCD1D75143A00A467E5 /* RxSwift.framework */,
+				FC494FCF1D75143A00A467E5 /* RxSwift.framework */,
+				FC494FD11D75143A00A467E5 /* RxSwift.framework */,
+				FC494FD31D75143A00A467E5 /* RxSwift.framework */,
+				FC494FD51D75143A00A467E5 /* RxCocoa.framework */,
+				FC494FD71D75143A00A467E5 /* RxCocoa.framework */,
+				FC494FD91D75143A00A467E5 /* RxCocoa.framework */,
+				FC494FDB1D75143A00A467E5 /* RxCocoa.framework */,
+				FC494FDD1D75143A00A467E5 /* RxBlocking.framework */,
+				FC494FDF1D75143A00A467E5 /* RxBlocking.framework */,
+				FC494FE11D75143A00A467E5 /* RxBlocking.framework */,
+				FC494FE31D75143A00A467E5 /* RxBlocking.framework */,
+				FC494FE51D75143A00A467E5 /* RxTests.framework */,
+				FC494FE71D75143A00A467E5 /* RxTests.framework */,
+				FC494FE91D75143A00A467E5 /* RxTests.framework */,
+				FC494FEB1D75143A00A467E5 /* RxTests.framework */,
+				FC494FED1D75143A00A467E5 /* AllTests-iOS.xctest */,
+				FC494FEF1D75143A00A467E5 /* AllTests-tvOS.xctest */,
+				FC494FF11D75143A00A467E5 /* AllTests-OSX.xctest */,
+				FC494FF31D75143A00A467E5 /* PerformanceTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC494FF61D75188E00A467E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FC494FF71D751A0F00A467E5 /* FlickrAPI.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FC494F9F1D75141B00A467E5 /* FlickrTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC494FB21D75141C00A467E5 /* Build configuration list for PBXNativeTarget "FlickrTest" */;
+			buildPhases = (
+				FC494F9C1D75141B00A467E5 /* Sources */,
+				FC494F9D1D75141B00A467E5 /* Frameworks */,
+				FC494F9E1D75141B00A467E5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlickrTest;
+			productName = FlickrTest;
+			productReference = FC494FA01D75141C00A467E5 /* FlickrTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FC494F981D75141B00A467E5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alexia Nunez";
+				TargetAttributes = {
+					FC494F9F1D75141B00A467E5 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = FC494F9B1D75141B00A467E5 /* Build configuration list for PBXProject "FlickrTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FC494F971D75141B00A467E5;
+			productRefGroup = FC494FA11D75141C00A467E5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FC494FB61D75143A00A467E5 /* Products */;
+					ProjectRef = FC494FB51D75143A00A467E5 /* Rx.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FC494F9F1D75141B00A467E5 /* FlickrTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FC494FCD1D75143A00A467E5 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = FC494FCC1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FCF1D75143A00A467E5 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = FC494FCE1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FD11D75143A00A467E5 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = FC494FD01D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FD31D75143A00A467E5 /* RxSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxSwift.framework;
+			remoteRef = FC494FD21D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FD51D75143A00A467E5 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = FC494FD41D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FD71D75143A00A467E5 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = FC494FD61D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FD91D75143A00A467E5 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = FC494FD81D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FDB1D75143A00A467E5 /* RxCocoa.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxCocoa.framework;
+			remoteRef = FC494FDA1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FDD1D75143A00A467E5 /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = FC494FDC1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FDF1D75143A00A467E5 /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = FC494FDE1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FE11D75143A00A467E5 /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = FC494FE01D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FE31D75143A00A467E5 /* RxBlocking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxBlocking.framework;
+			remoteRef = FC494FE21D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FE51D75143A00A467E5 /* RxTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTests.framework;
+			remoteRef = FC494FE41D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FE71D75143A00A467E5 /* RxTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTests.framework;
+			remoteRef = FC494FE61D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FE91D75143A00A467E5 /* RxTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTests.framework;
+			remoteRef = FC494FE81D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FEB1D75143A00A467E5 /* RxTests.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RxTests.framework;
+			remoteRef = FC494FEA1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FED1D75143A00A467E5 /* AllTests-iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AllTests-iOS.xctest";
+			remoteRef = FC494FEC1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FEF1D75143A00A467E5 /* AllTests-tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AllTests-tvOS.xctest";
+			remoteRef = FC494FEE1D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FF11D75143A00A467E5 /* AllTests-OSX.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "AllTests-OSX.xctest";
+			remoteRef = FC494FF01D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC494FF31D75143A00A467E5 /* PerformanceTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PerformanceTests.app;
+			remoteRef = FC494FF21D75143A00A467E5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FC494F9E1D75141B00A467E5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC494FAE1D75141C00A467E5 /* LaunchScreen.storyboard in Resources */,
+				FC494FAB1D75141C00A467E5 /* Assets.xcassets in Resources */,
+				FC494FA91D75141C00A467E5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FC494F9C1D75141B00A467E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC494FF81D751A0F00A467E5 /* FlickrAPI.swift in Sources */,
+				FC494FA61D75141C00A467E5 /* ViewController.swift in Sources */,
+				FC494FA41D75141C00A467E5 /* AppDelegate.swift in Sources */,
+				FCDCAF181D76588500DAA203 /* FlickrViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FC494FA71D75141C00A467E5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC494FA81D75141C00A467E5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FC494FAC1D75141C00A467E5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC494FAD1D75141C00A467E5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FC494FB01D75141C00A467E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FC494FB11D75141C00A467E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC494FB31D75141C00A467E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlickrTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexianunez.FlickrTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FC494FB41D75141C00A467E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FlickrTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexianunez.FlickrTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FC494F9B1D75141B00A467E5 /* Build configuration list for PBXProject "FlickrTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC494FB01D75141C00A467E5 /* Debug */,
+				FC494FB11D75141C00A467E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FC494FB21D75141C00A467E5 /* Build configuration list for PBXNativeTarget "FlickrTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC494FB31D75141C00A467E5 /* Debug */,
+				FC494FB41D75141C00A467E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FC494F981D75141B00A467E5 /* Project object */;
+}
