@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let data: Observable<[Photo]> = Observable.just([])
+    var viewModel = FlickrViewModel()
     
     let disposeBag = DisposeBag()
 
@@ -26,9 +26,9 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.setupTableBindings()
+        setupTableBindings()
         
-        self.setupUIDrivers()
+        setupUIDrivers()
         
     }
 
@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     
     private func setupTableBindings() {
        
-        self.data.bindTo(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
+        viewModel.data
+            .drive(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
             
                 cell.textLabel?.text = photo.title
                 cell.detailTextLabel?.text = photo.ID
@@ -54,7 +55,7 @@ class ViewController: UIViewController {
             }
             .addDisposableTo(self.disposeBag)
         
-        self.tableView.rx_modelSelected(Photo)
+        tableView.rx_modelSelected(Photo)
         .subscribeNext {
             
             print("you selected \($0)")
@@ -64,7 +65,7 @@ class ViewController: UIViewController {
     
     private func setupUIDrivers() {
         
-        self.tapRecognizer.rx_event.asDriver()
+        tapRecognizer.rx_event.asDriver()
             
             .driveNext { [unowned self] _ in
                 
@@ -75,15 +76,15 @@ class ViewController: UIViewController {
             }
             .addDisposableTo(self.disposeBag)
         
-        self.searchBar.rx_text.asDriver()
+        searchBar.rx_text
             
-            .throttle(0.5)
+            .throttle(0.5, scheduler: MainScheduler.instance)
             
             .distinctUntilChanged()
             
-            .drive(self.searchBar.rx_text)
+            .bindTo(viewModel.searchText)
             
-            .addDisposableTo(self.disposeBag)
+            .addDisposableTo(disposeBag)
         
     }
 
