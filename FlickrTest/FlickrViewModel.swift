@@ -11,12 +11,13 @@ import RxCocoa
 import RxSwift
 
 enum FlickrAPIResponseKeys: String {
-    case Photos = "photos"
-    case Id = "id"
-    case FarmId = "farm"
-    case ServerID = "server"
-    case Secret = "secret"
-    case Title = "title"
+    case PhotosDict = "photos"
+    case PhotosArray = "photo"
+    case PhotoId = "id"
+    case PhotoFarmId = "farm"
+    case PhotoServerID = "server"
+    case PhotoSecret = "secret"
+    case PhotoTitle = "title"
 }
 
 struct FlickrViewModel {
@@ -58,25 +59,38 @@ struct FlickrViewModel {
         
             .map { data in
                 
-                let photos: [Photo] = [Photo]()
+                var photos: [Photo] = [Photo]()
                 
                 guard let
                     result = NSString(data: data, encoding: NSUTF8StringEncoding) as? String,
                     dict = self.convertStringToDictionary(result),
-                    items = dict[FlickrAPIResponseKeys.Photos.rawValue]
+                    photosDict = dict[FlickrAPIResponseKeys.PhotosDict.rawValue],
+                    items = photosDict[FlickrAPIResponseKeys.PhotosArray.rawValue] as? [[String: AnyObject]]
+
                     else {
                         return photos
                 }
                 
                 
-                print("\(items)")
+                print(items)
+                
+                for item in items {
+                    
+                    guard let
+                        photoID     = item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String,
+                        photoTitle  = item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String,
+                        photoFarmID = item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int,
+                        photoServerID = item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String,
+                        photoSecret = item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String
+                        else {
+                            break
+                    }
+                    
+                    photos.append(Photo(ID: photoID, title: photoTitle, farmID: photoFarmID, serverID: photoServerID, secret: photoSecret))
+                    
+                }
 
-                
-             
-                
-                
                 return photos
-                
                 
         }
         
@@ -102,6 +116,5 @@ struct FlickrViewModel {
         
         return nil
     }
-
     
 }
