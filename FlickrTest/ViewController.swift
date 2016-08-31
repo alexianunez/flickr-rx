@@ -55,12 +55,6 @@ class ViewController: UIViewController {
             }
             .addDisposableTo(self.disposeBag)
         
-        tableView.rx_modelSelected(Photo)
-        .subscribeNext {
-            
-            print("you selected \($0)")
-            
-        }.addDisposableTo(self.disposeBag)
     }
     
     private func setupUIDrivers() {
@@ -68,8 +62,6 @@ class ViewController: UIViewController {
         tapRecognizer.rx_event.asDriver()
             
             .driveNext { [unowned self] _ in
-                
-                print("tap gesture detected")
                 
                 self.view.endEditing(true)
                 
