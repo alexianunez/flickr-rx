@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var viewModel = FlickrViewModel()
     
     let disposeBag = DisposeBag()
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -62,8 +62,11 @@ class ViewController: UIViewController {
                 
                 cell.detailTextLabel?.text = photo.ID
                 
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                
             }
             .addDisposableTo(self.disposeBag)
+        
         
     }
     
@@ -79,11 +82,20 @@ class ViewController: UIViewController {
             .addDisposableTo(self.disposeBag)
         
         searchBar.rx_text
-                        
+            
             .distinctUntilChanged()
             
             .bindTo(viewModel.searchText)
             
+            .addDisposableTo(disposeBag)
+        
+        searchBar.rx_text
+        
+            .subscribeNext { (str: String) in
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = !str.isEmpty
+                
+        }
             .addDisposableTo(disposeBag)
         
     }
