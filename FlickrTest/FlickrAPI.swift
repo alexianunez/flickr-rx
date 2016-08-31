@@ -92,6 +92,8 @@ struct FlickrAPI {
         
     }
     
+    
+    
     private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
         
         var cleanString = text.stringByReplacingOccurrencesOfString("jsonFlickrApi(", withString: "")

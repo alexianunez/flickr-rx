@@ -9,7 +9,12 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import Kingfisher
+
+enum GeneralError {
+    
+    case TestError
+    
+}
 
 class ViewController: UIViewController {
 
@@ -26,6 +31,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.title = "Alexia's Flickr RX App"
         
         setupTableBindings()
         
@@ -55,8 +62,6 @@ class ViewController: UIViewController {
                 
                 cell.detailTextLabel?.text = photo.ID
                 
-                self.loadImage(photo.url, cell: cell)
-            
             }
             .addDisposableTo(self.disposeBag)
         
@@ -80,19 +85,6 @@ class ViewController: UIViewController {
             .bindTo(viewModel.searchText)
             
             .addDisposableTo(disposeBag)
-        
-    }
-    
-    private func loadImage(url: String, cell: UITableViewCell) {
-        
-        guard let photoUrl = NSURL(string: url)
-            else {
-                return
-        }
-        
-        let resource = Resource(downloadURL: photoUrl, cacheKey: url)
-        
-        cell.imageView?.kf_setImageWithResource(resource)
         
     }
     
