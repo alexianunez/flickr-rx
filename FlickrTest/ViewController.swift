@@ -77,9 +77,7 @@ class ViewController: UIViewController {
             .addDisposableTo(self.disposeBag)
         
         searchBar.rx_text
-            
-            .throttle(0.5, scheduler: MainScheduler.instance)
-            
+                        
             .distinctUntilChanged()
             
             .bindTo(viewModel.searchText)
