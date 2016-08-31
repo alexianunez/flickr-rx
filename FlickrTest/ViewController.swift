@@ -16,28 +16,50 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tapRecognizer: UITapGestureRecognizer!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    let data: Observable<[Photo]> = Observable.just([])
+    
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        self.setupTableBindings()
+        
         self.setupUIDrivers()
         
     }
 
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         
         super.viewDidAppear(animated)
         
+    }
+    
+    private func setupTableBindings() {
+       
+        self.data.bindTo(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
+            
+                cell.textLabel?.text = photo.title
+                cell.detailTextLabel?.text = photo.ID
+            
+            }
+            .addDisposableTo(self.disposeBag)
         
-        
-        
+        self.tableView.rx_modelSelected(Photo)
+        .subscribeNext {
+            
+            print("you selected \($0)")
+            
+        }.addDisposableTo(self.disposeBag)
     }
     
     private func setupUIDrivers() {
@@ -55,14 +77,16 @@ class ViewController: UIViewController {
         
         self.searchBar.rx_text.asDriver()
             
-            .driveNext { (string: String) in
-                
-                print("\(string)")
-            }
+            .throttle(0.5)
+            
+            .distinctUntilChanged()
+            
+            .drive(self.searchBar.rx_text)
             
             .addDisposableTo(self.disposeBag)
         
     }
 
 }
+
 

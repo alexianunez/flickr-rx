@@ -16,30 +16,25 @@ enum FlickrAPIError: ErrorType {
     
 }
 
-enum FlickrAPIMethod: String {
-    
-    case Search = "flickr.photos.search"
-    
-}
-
 struct Photo {
     
-    var ID: String
-    var farmID: String
-    var serverID: String
-    var secret: String
+    let ID: String
+    let farmID: String
+    let serverID: String
+    let secret: String
+    let url: String
+    let title: String
     
-    init(ID: String, farmID: String, serverID: String, secret: String) {
+    init(ID: String, title: String, farmID: String, serverID: String, secret: String) {
         
         self.ID = ID
+        self.title = title
         self.farmID = farmID
         self.serverID = serverID
         self.secret = secret
+        self.url = "https://farm\(self.farmID).staticflickr.com/\(self.serverID)/\(self.ID)_\(self.secret).jpg"
         
     }
-    
-    // Need to return photo in this format: https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
-
     
 }
 
@@ -68,6 +63,7 @@ struct FlickrAPI {
                         
                         guard let
                             id          = dict["id"] as? String,
+                            title       = dict["title"] as? String,
                             farmID      = dict["farm"] as? String,
                             serverID    = dict["server"] as? String,
                             secret      = dict["secret"] as? String
@@ -75,7 +71,7 @@ struct FlickrAPI {
                                 return
                         }
                         
-                        photos.append(Photo(ID: id, farmID: farmID, serverID: serverID, secret: secret))
+                        photos.append(Photo(ID: id, title: title, farmID: farmID, serverID: serverID, secret: secret))
                         
                     })
                     
