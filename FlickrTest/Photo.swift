@@ -22,7 +22,7 @@ struct Photo {
         self.farmID = farmID
         self.serverID = serverID
         self.secret = secret
-        self.url = "https://farm\(self.farmID).staticflickr.com/\(self.serverID)/\(self.ID)_\(self.secret).jpg"
+        self.url = "https://farm\(self.farmID).staticflickr.com/\(self.serverID)/\(self.ID)_\(self.secret)_s.jpg"
         
     }
     

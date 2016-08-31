@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 class ViewController: UIViewController {
 
@@ -47,10 +48,14 @@ class ViewController: UIViewController {
     private func setupTableBindings() {
        
         viewModel.data
-            .drive(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
             
+            .drive(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
+                
                 cell.textLabel?.text = photo.title
+                
                 cell.detailTextLabel?.text = photo.ID
+                
+                self.loadImage(photo.url, cell: cell)
             
             }
             .addDisposableTo(self.disposeBag)
@@ -77,7 +82,20 @@ class ViewController: UIViewController {
             .addDisposableTo(disposeBag)
         
     }
-
+    
+    private func loadImage(url: String, cell: UITableViewCell) {
+        
+        guard let photoUrl = NSURL(string: url)
+            else {
+                return
+        }
+        
+        let resource = Resource(downloadURL: photoUrl, cacheKey: url)
+        
+        cell.imageView?.kf_setImageWithResource(resource)
+        
+    }
+    
 }
 
 

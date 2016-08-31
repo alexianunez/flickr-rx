@@ -52,6 +52,8 @@ struct FlickrAPI {
             
             .rx_data(NSURLRequest(URL: url))
             
+            
+            
             .retry(3)
             
             .map { data in
