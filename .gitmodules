@@ -1,0 +1,6 @@
+[submodule "Kingfisher"]
+	path = Kingfisher
+	url = https://alexianunez@github.com/onevcat/Kingfisher.git
+[submodule "RxSwift"]
+	path = RxSwift
+	url = https://alexianunez@github.com/ReactiveX/RxSwift.git
