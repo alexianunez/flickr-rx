@@ -42,8 +42,11 @@ struct FlickrAPI {
     
     func getPhotos(searchTerm: String) -> Observable<[Photo]> {
         
-        guard !searchTerm.isEmpty,
-            let url = NSURL(string: "https://api.flickr.com/services/rest/?method=\(method.rawValue)&api_key=\(apiKey)&format=json&tags=\(searchTerm)")
+        guard
+            
+            !searchTerm.isEmpty,
+            let cleanSearchTerm = searchTerm.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()),
+            url = NSURL(string: "https://api.flickr.com/services/rest/?method=\(method.rawValue)&api_key=\(apiKey)&format=json&tags=\(cleanSearchTerm))")
             else {
                 return Observable.just([])
         }
