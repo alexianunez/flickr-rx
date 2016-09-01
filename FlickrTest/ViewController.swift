@@ -74,9 +74,7 @@ class ViewController: UIViewController {
                         cell.setNeedsLayout()
                     
                     })
-                
-                self.tableView.layoutSubviews()
-                
+                                
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
             }
