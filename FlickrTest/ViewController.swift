@@ -9,6 +9,7 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import Kingfisher
 
 enum GeneralError {
     
@@ -58,9 +59,23 @@ class ViewController: UIViewController {
             
             .drive(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
                 
+                cell.layoutMargins = UIEdgeInsetsZero
+                
+                cell.separatorInset = UIEdgeInsetsZero
+                
                 cell.textLabel?.text = photo.title
                 
-                cell.detailTextLabel?.text = photo.ID
+                cell.detailTextLabel?.text = "ID: \(photo.ID)"
+                
+                let r: Resource = Resource(downloadURL: NSURL(string: photo.url)!)
+                
+                cell.imageView!.kf_setImageWithResource(r, placeholderImage: nil, optionsInfo: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, imageURL) -> () in
+                    
+                        cell.setNeedsLayout()
+                    
+                    })
+                
+                self.tableView.layoutSubviews()
                 
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
