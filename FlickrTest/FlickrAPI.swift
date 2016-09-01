@@ -92,7 +92,11 @@ struct FlickrAPI {
             
         }
         
-        return photos
+        return photos.filter({ photo -> Bool in
+            
+            photo.ID.characters.count > 0
+            
+        })
         
     }
     
