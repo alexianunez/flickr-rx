@@ -59,41 +59,45 @@ struct FlickrAPI {
             
             .map { data in
                 
-                var photos: [Photo] = [Photo]()
-                
-                guard let
-                    result = NSString(data: data, encoding: NSUTF8StringEncoding) as? String,
-                    dict = self.convertStringToDictionary(result),
-                    photosDict = dict[FlickrAPIResponseKeys.PhotosDict.rawValue],
-                    items = photosDict[FlickrAPIResponseKeys.PhotosArray.rawValue] as? [[String: AnyObject]]
-                    
-                    else {
-                        return photos
-                }
-                
-                for item in items {
-                    
-                    guard let
-                        photoID     = item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String,
-                        photoTitle  = item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String,
-                        photoFarmID = item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int,
-                        photoServerID = item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String,
-                        photoSecret = item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String
-                        else {
-                            break
-                    }
-                    
-                    photos.append(Photo(ID: photoID, title: photoTitle, farmID: photoFarmID, serverID: photoServerID, secret: photoSecret))
-                    
-                }
-                
-                return photos
+                return self.parseJSON(data)
                 
         }
         
     }
     
-    
+    private func parseJSON(data: NSData) -> [Photo] {
+        
+        var photos: [Photo] = [Photo]()
+        
+        guard let
+            result = NSString(data: data, encoding: NSUTF8StringEncoding) as? String,
+            dict = self.convertStringToDictionary(result),
+            photosDict = dict[FlickrAPIResponseKeys.PhotosDict.rawValue],
+            items = photosDict[FlickrAPIResponseKeys.PhotosArray.rawValue] as? [[String: AnyObject]]
+            
+            else {
+                return photos
+        }
+        
+        for item in items {
+            
+            guard let
+                photoID     = item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String,
+                photoTitle  = item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String,
+                photoFarmID = item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int,
+                photoServerID = item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String,
+                photoSecret = item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String
+                else {
+                    break
+            }
+            
+            photos.append(Photo(ID: photoID, title: photoTitle, farmID: photoFarmID, serverID: photoServerID, secret: photoSecret))
+            
+        }
+        
+        return photos
+        
+    }
     
     private func convertStringToDictionary(text: String) -> [String:AnyObject]? {
         
