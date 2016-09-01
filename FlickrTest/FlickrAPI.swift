@@ -79,19 +79,16 @@ struct FlickrAPI {
                 return photos
         }
         
-        for item in items {
+        items.forEach { item in
             
-            guard let
-                photoID     = item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String,
-                photoTitle  = item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String,
-                photoFarmID = item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int,
-                photoServerID = item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String,
-                photoSecret = item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String
-                else {
-                    break
-            }
-            
-            photos.append(Photo(ID: photoID, title: photoTitle, farmID: photoFarmID, serverID: photoServerID, secret: photoSecret))
+            photos.append(
+                Photo(
+                    ID: item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String ?? "",
+                    title: item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String ?? "",
+                    farmID: item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int ?? 0,
+                    serverID: item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String ?? "",
+                    secret: item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String ?? "")
+            )
             
         }
         
