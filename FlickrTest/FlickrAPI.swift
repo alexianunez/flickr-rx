@@ -79,15 +79,15 @@ struct FlickrAPI {
                 return photos
         }
         
-        items.forEach { item in
+        items.forEach {
             
             photos.append(
                 Photo(
-                    ID: item[FlickrAPIResponseKeys.PhotoId.rawValue] as? String ?? "",
-                    title: item[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String ?? "",
-                    farmID: item[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int ?? 0,
-                    serverID: item[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String ?? "",
-                    secret: item[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String ?? "")
+                    ID: $0[FlickrAPIResponseKeys.PhotoId.rawValue] as? String ?? "",
+                    title: $0[FlickrAPIResponseKeys.PhotoTitle.rawValue] as? String ?? "",
+                    farmID: $0[FlickrAPIResponseKeys.PhotoFarmId.rawValue] as? Int ?? 0,
+                    serverID: $0[FlickrAPIResponseKeys.PhotoServerID.rawValue] as? String ?? "",
+                    secret: $0[FlickrAPIResponseKeys.PhotoSecret.rawValue] as? String ?? "")
             )
             
         }
