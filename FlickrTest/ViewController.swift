@@ -57,6 +57,11 @@ class ViewController: UIViewController {
        
         viewModel.data
             
+            .doOnNext({ _ in
+
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
+            })
             .drive(tableView.rx_itemsWithCellIdentifier("Cell")) {_, photo, cell in
                 
                 cell.layoutMargins = UIEdgeInsetsZero
@@ -75,7 +80,6 @@ class ViewController: UIViewController {
                     
                     })
                                 
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
             }
             .addDisposableTo(self.disposeBag)
